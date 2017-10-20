@@ -11,5 +11,8 @@
     "handler"
   ],
   "author": "Conor Turner",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  }
 }
