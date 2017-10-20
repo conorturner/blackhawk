@@ -1,9 +1,10 @@
-// In the beginning there was a comment
+import {Promise} from 'es6-promise';
 
 export class BlackHawk {
-    id: number;
+    private id: number;
     constructor(id: number) { this.id = id; }
-    logId() {
-        console.log(`My id is ${this.id}!`);
+    blackhawkDown () { return Promise.resolve("it works") }
+    getId() {
+        return this.id;
     }
 }

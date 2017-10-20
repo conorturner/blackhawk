@@ -1,11 +1,27 @@
-const {expect} = require("chai");
+const {should} = require("chai");
+should();
 
 describe("Test", () => {
 
-	const {BlackHawk} = require("../build");
-	const bh = new BlackHawk(10);
+	it("Private members oh joy", (done) => {
+		const {BlackHawk} = require("../build");
+		const bh = new BlackHawk(10);
 
-	bh.logId();
+		bh.getId().should.equal(10);
 
+		done();
+	});
+
+	it("Promises would be nice?", (done) => {
+		const {BlackHawk} = require("../build");
+		const bh = new BlackHawk(10);
+
+		bh.blackhawkDown().then(result => {
+			console.log(result)
+			done();
+		});
+
+
+	});
 
 });
