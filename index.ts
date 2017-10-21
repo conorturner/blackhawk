@@ -1,5 +1,6 @@
 import {Promise} from 'es6-promise';
 import {Grapple} from 'grapple-http';
+import {Stream} from 'plumbum';
 
 const grap = new Grapple();
 

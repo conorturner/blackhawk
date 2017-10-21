@@ -1,8 +1,8 @@
 {
   "name": "blackhawk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Error control flow handler",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "mocha test"
   },
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "es6-promise": "^4.1.1",
-    "grapple-http": "git@github.com:conorturner/grapple.git"
+    "grapple-http": "conorturner/grapple",
+    "plumbum": "conorturner/plumbum"
   }
 }
