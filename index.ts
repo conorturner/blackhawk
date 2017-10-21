@@ -1,14 +1,12 @@
 import {Promise} from 'es6-promise';
-import {Grapple} from 'grapple-http';
-import {Stream} from 'plumbum';
-
-const grap = new Grapple();
+import {LogStream} from './library/LogStream';
+import {Log, ErrorLog} from './types/Log';
 
 export class BlackHawk {
-    private logStream: Stream<any>;
+    private logStream: LogStream;
 
     constructor() {
-        this.logStream = new Stream();
+        this.logStream = new LogStream();
 
     }
 
@@ -17,8 +15,18 @@ export class BlackHawk {
     }
 
     silence(error: Error): BlackHawk {
-        console.log("Error silenced:", new Error().stack);
+        this.error("silenced", error);
         return this;
+    }
+
+    log (text: string) {
+        const log: Log = {text, time: new Date()};
+        this.logStream.log(log);
+    }
+
+    error (text: string, details: any) : void {
+        const errorLog: ErrorLog = ({text, time: new Date(), details, stack: new Error().stack});
+        this.logStream.log(errorLog);
     }
 }
 
