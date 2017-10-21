@@ -5,10 +5,24 @@ import {Stream} from 'plumbum';
 const grap = new Grapple();
 
 export class BlackHawk {
-    private id: number;
-    constructor(id: number) { this.id = id; }
-    blackhawkDown () { return Promise.resolve("it works") }
-    getGoogle() : Promise<string> {
-        return grap.get("http://www.google.com");
+    private logStream: Stream<any>;
+
+    constructor() {
+        this.logStream = new Stream();
+
     }
+
+    continueWith(value: any): Promise<any> {
+        return Promise.resolve(value);
+    }
+
+    silence(error: Error): BlackHawk {
+        console.log("Error silenced:", new Error().stack);
+        return this;
+    }
+}
+
+export function Wrap(error: any, handler: Function): Promise<any> {
+    if (handler) return handler();
+    else return Promise.reject(error);
 }
