@@ -2,9 +2,12 @@
   "name": "blackhawk",
   "version": "1.0.2",
   "description": "Error control flow handler",
-  "main": "build/index.js",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "prepublishOnly": "npm run build",
+    "build": "tsc"
   },
   "keywords": [
     "error",
