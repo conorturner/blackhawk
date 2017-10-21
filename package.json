@@ -18,6 +18,7 @@
     "typescript": "^2.5.3"
   },
   "dependencies": {
-    "es6-promise": "^4.1.1"
+    "es6-promise": "^4.1.1",
+    "grapple-http": "git@github.com:conorturner/grapple.git"
   }
 }
