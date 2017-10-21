@@ -1,19 +1,12 @@
 const {should} = require("chai");
 should();
 
+const {BlackHawk} = require("../build");
+
+
 describe("Test", () => {
 
-	it("Private members oh joy", (done) => {
-		const {BlackHawk} = require("../build");
-		const bh = new BlackHawk(10);
-
-		bh.getId().should.equal(10);
-
-		done();
-	});
-
 	it("Promises would be nice?", (done) => {
-		const {BlackHawk} = require("../build");
 		const bh = new BlackHawk(10);
 
 		bh.blackhawkDown().then(result => {
@@ -21,6 +14,17 @@ describe("Test", () => {
 			done();
 		});
 
+	});
+
+	it("Get google", (done) => {
+		const bh = new BlackHawk(10);
+
+		bh.getGoogle()
+			.then(result => {
+				console.log(result);
+				done()
+			})
+			.catch(err => done(err));
 
 	});
 
