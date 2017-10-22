@@ -10,7 +10,7 @@ export abstract class Stream<T> {
     private _onReady: Function;
     private transformPromise: Promise<T>;
 
-    private consumers: Array<Stream<T>;
+    private consumers: Array<Stream<T>>;
 
     abstract _transform(item: T): Promise<T>;
 
