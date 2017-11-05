@@ -1,29 +1,21 @@
 {
   "name": "blackhawk",
   "version": "1.0.2",
-  "description": "Error control flow handler",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
+  "description": "Node server overwatch and managment.",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "mocha test",
-    "prepublishOnly": "npm run build",
-    "build": "tsc",
-    "clean": "rm -R build/*"
+    "test": "mocha test"
   },
   "keywords": [
-    "error",
-    "handler"
+    "overwatch",
+    "managment"
   ],
   "author": "Conor Turner",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.0.1",
-    "typescript": "^2.5.3"
+    "mocha": "^4.0.1"
   },
-  "dependencies": {
-    "es6-promise": "^4.1.1",
-    "grapple-http": "conorturner/grapple",
-    "plumbum": "conorturner/plumbum"
-  }
+  "dependencies": {}
 }
